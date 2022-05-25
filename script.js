@@ -73,6 +73,7 @@ for (let i = 0; i < 5; i ++) {
   element.style.height = "40px";
   element.style.border = "1px solid black";
   element.style.backgroundColor = "white";
+  element.style.display = 'inline-block', 
   quadro.appendChild(line);
   line.appendChild(element);
   }
