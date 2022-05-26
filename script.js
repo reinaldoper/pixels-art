@@ -28,7 +28,7 @@ for(let i = 0; i < arrayCores.length; i ++){
     let day = arrayCores[i];
     let dayItem = document.createElement("div");
     if(day === "black"){
-       dayItem.className = "color";
+       dayItem.className = "color selected";
        dayItem.style.backgroundColor = "black";
        dayItem.style.border = "1px solid black"
        cores.appendChild(dayItem); 
@@ -59,7 +59,7 @@ function verificaCor(){
     corBlack.firstChild.style.backgroundColor === "black";
 }
 
-//requisito 4- 25 elementos 
+//requisito 4-  e 5 - 25 elementos 
 
 const quadro = document.createElement("section");
 quadro.id = "pixel-board";
@@ -78,7 +78,17 @@ for (let i = 0; i < 5; i ++) {
   line.appendChild(element);
   }
 }
-//requisito 5 - 
+//requisito 6 - 
+/* window.onload =  function(){ */
+/*  const selecao = document.querySelector("#color-palette").getElementsByClassName("color");
+ for(let i = 0; i < selecao.length; i ++){
+     let colocaClasse = selecao[i];
+     if(colocaClasse === "black")
+     colocaClasse.className = "selected";
+     selecao.appendChild(colocaClasse);
+ }
+} */
+
 
 
 
