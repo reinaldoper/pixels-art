@@ -146,12 +146,13 @@ barra[3].addEventListener("click", removerClass3);
    barra[3].classList.add('selected');
    cor = "green";
   }
-  
+  //requisito 9
 
-      
-      
-
-  
+var btn = document.querySelector("#clear-board");
+btn.addEventListener("click", function() {
+    
+    location.reload();
+});
       
 
       
