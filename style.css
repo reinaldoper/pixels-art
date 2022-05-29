@@ -5,15 +5,25 @@
     height: 50px;
     width: 50px;
 }
-body{
+/* body{
     display: inline-block;;
-}
+} */
 .pixel{
     background-color: white;
     height: 40px;
     width: 40px;
+    display: inline-block;
+    border: 1px solid black;
 }
 #color-palette{
-    display: inline;
-    
+    display: inline-block;
+}
+input{
+    width: 70px;
+}
+/* section{
+    display:inline-block;
+} */
+div{
+
 }

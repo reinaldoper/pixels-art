@@ -72,13 +72,66 @@ function verificaCor(){
 }
 
 //requisito 4-  e 5 - 25 elementos 
-function createQuadro(){
-const quadro = document.createElement("section");
-quadro.id = "pixel-board";
-document.body.appendChild(quadro);
-for (let i = 0; i < 5; i ++) {
-  const line = document.createElement("div");
-  for (let j = 0; j < 5; j ++) {
+
+//reset o boar para cor branca
+
+var btn = document.querySelector("#clear-board");
+btn.addEventListener("click", function() {
+     const elements = document.getElementsByClassName("pixel");
+    /* location.reload(); */
+    for (const element of elements) {
+      element.style.backgroundColor = 'white';
+    }
+   
+});
+
+//requisito 10 - botão adicionar
+
+const immput = document.querySelector("#board-size");
+const botaInput = document.querySelector("#generate-board");
+
+botaInput.addEventListener("click", function(){
+   let num = 5;
+   if(immput.value  === ""){
+      alert("Board inválido!");
+   }else if(immput.value < 5){
+      immput.value = 5;
+      num = immput.value;
+   }else if(immput.value == 50 || immput.value > 50){
+      immput.value = 50;
+      num = immput.value;
+   }else{
+      num = immput.value;
+   }
+   recarregarPagina(num);
+  
+  /*  atualizaBoard(num); */
+  /*  console.log(num); */
+});
+
+//novos valores do board
+/* sessionStorage.clear(); */
+let numero = 5;
+/* sessionStorage.setItem("atualiza", num); */
+localStorage.clear();
+function recarregarPagina(x) {
+   /* sessionStorage.clear(); */
+   sessionStorage.setItem("atualiza1", x);
+   window.location.reload(); 
+   
+   console.log(numero);
+   // antes de atualizar, você seta uma variável no sessionStorage como true
+  // atualiza a página
+};
+numero = sessionStorage.getItem("atualiza1");
+if(numero === null){
+   numero = 5;
+}
+
+for(let i = 0; i < numero; i ++){
+   const quadro = document.querySelector("#pixel-board");
+   const line = document.createElement("div");
+  for (let j = 0; j < numero; j ++) {
   const element = document.createElement("div");
   element.className = "pixel";
   element.style.width = "40px";
@@ -88,10 +141,13 @@ for (let i = 0; i < 5; i ++) {
   element.style.display = 'inline-block', 
   quadro.appendChild(line);
   line.appendChild(element);
-  }
+  } 
 }
-}createQuadro();
-//requisito 8 -
+
+
+
+
+//atualiza as cores
 let cor = "black";
 const pixelBarra = document.getElementsByClassName("pixel");
 for(let i = 0; i < pixelBarra.length; i ++){
@@ -104,6 +160,8 @@ for(let i = 0; i < pixelBarra.length; i ++){
 
       
 
+
+   //seleciona a classe selected
 const barra = document.getElementsByClassName('color');
 barra[0].addEventListener("click", removerClass0);
 barra[1].addEventListener("click", removerClass1);
@@ -145,15 +203,16 @@ barra[3].addEventListener("click", removerClass3);
    barra[2].classList.remove('selected');
    barra[3].classList.add('selected');
    cor = "green";
-  }
-  //requisito 9
+  }  
 
-var btn = document.querySelector("#clear-board");
-btn.addEventListener("click", function() {
-    
-    location.reload();
-});
+
+   
       
+
+     
+
+
+
 
       
 
