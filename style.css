@@ -5,18 +5,21 @@
     height: 50px;
     width: 50px;
 }
-/* body{
-    display: inline-block;;
-} */
+body{
+    background-color: aqua;
+}
 .pixel{
     background-color: white;
     height: 40px;
     width: 40px;
     display: inline-block;
     border: 1px solid black;
+    padding: 2px 2px 2px 2px;
 }
 #color-palette{
     display: inline-block;
+    text-align: center;
+    margin-left: 438px;
 }
 input{
     width: 70px;
@@ -24,6 +27,12 @@ input{
 /* section{
     display:inline-block;
 } */
-div{
-
+header{
+    text-align: center;
+}
+section{
+    text-align: center;
+}
+#pixel-board{
+    padding: 2px 2px;
 }

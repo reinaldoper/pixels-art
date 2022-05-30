@@ -21,9 +21,19 @@ nowDiv.appendChild(newDiv); */
 const palet = document.createElement("section");
 palet.id = "color-palette";
 paletaColors.appendChild(palet);  */
-
+// função gera cores aleatórias
+function randomRgb() {
+   const r = Math.floor((Math.random() * 255));
+   const g = Math.floor((Math.random() * 255));
+   const b = Math.floor((Math.random() * 255));
+   return "rgb(" + r + ", " + g + ", " + b + ")";
+ }
+let minhaCor = randomRgb();
+let minhaCor1 = randomRgb();
+let minhaCor2 = randomRgb();
+console.log(minhaCor);
 const cores = document.querySelector("#color-palette");
-const arrayCores = ["black", "red", "yellow", "green"];
+const arrayCores = ["black", minhaCor, minhaCor1, minhaCor2];
 for(let i = 0; i < arrayCores.length; i ++){
     let day = arrayCores[i];
     let dayItem = document.createElement("div");
@@ -36,27 +46,27 @@ for(let i = 0; i < arrayCores.length; i ++){
        dayItem.style.width = "50px";
        cores.appendChild(dayItem); 
     }
-    if(day === "red"){
+    if(day === minhaCor){
         dayItem.className = "color";
-        dayItem.style.background = "red";
+        dayItem.style.background = minhaCor;
         dayItem.style.border = "1px solid rgb(0,0,0)"
         dayItem.style.display = 'inline-block'; 
         dayItem.style.height = "50px";
         dayItem.style.width = "50px";
         cores.appendChild(dayItem); 
      }
-     if(day === "yellow"){
+     if(day === minhaCor1){
         dayItem.className = "color";
-        dayItem.style.background = "yellow";
+        dayItem.style.background = minhaCor1;
         dayItem.style.border = "1px solid rgb(0,0,0)";
         dayItem.style.display = 'inline-block';
         dayItem.style.height = "50px";
         dayItem.style.width = "50px";
         cores.appendChild(dayItem); 
      }
-     if(day === "green"){
+     if(day === minhaCor2){
         dayItem.className = "color";
-        dayItem.style.background = "green";
+        dayItem.style.background = minhaCor2;
         dayItem.style.border = "1px solid rgb(0,0,0)"
         dayItem.style.display = 'inline-block';
         dayItem.style.height = "50px";
@@ -183,7 +193,7 @@ barra[3].addEventListener("click", removerClass3);
    barra[1].classList.add('selected');
    barra[2].classList.remove('selected');
    barra[3].classList.remove('selected');
-   cor = "red";
+   cor = minhaCor;
   }
 
 
@@ -192,7 +202,7 @@ barra[3].addEventListener("click", removerClass3);
    barra[1].classList.remove('selected');
    barra[2].classList.add('selected');
    barra[3].classList.remove('selected');
-   cor = "yellow";
+   cor = minhaCor1;
    
   }
 
@@ -202,7 +212,7 @@ barra[3].addEventListener("click", removerClass3);
    barra[1].classList.remove('selected');
    barra[2].classList.remove('selected');
    barra[3].classList.add('selected');
-   cor = "green";
+   cor = minhaCor2;
   }  
 
 
