@@ -7,6 +7,7 @@
 }
 body{
     background-color: aqua;
+    text-align: center;
 }
 .pixel{
     background-color: white;
@@ -20,7 +21,7 @@ body{
 #color-palette{
     display: inline-block;
     text-align: center;
-    margin-left: 438px;
+    /* margin-left: 438px; */
 }
 input{
     width: 70px;
@@ -38,5 +39,4 @@ section{
     padding: 2px 2px;
     border-radius: 2%;
     border: 4px solid burlywood;
-    border: 30%;
 }
